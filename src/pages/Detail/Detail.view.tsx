@@ -78,6 +78,7 @@ const DetailView = () => {
           <div className="mt-[59px] space-y-[10px]">
             {todoList.map((todo, index) => (
               <CardDetail
+                data-cy={`todo-item-${index}`}
                 todo={todo}
                 key={`todo ${index}`}
                 onDeleteItem={openModalDelete(todo)}

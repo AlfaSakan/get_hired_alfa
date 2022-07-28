@@ -34,7 +34,7 @@ const EditText: React.FC<IProps> = ({ onChange, value, onEdited }) => {
           {value}
         </h1>
       )}
-      <div onClick={onIsEditModeHandler}>
+      <div onClick={onIsEditModeHandler} data-cy="todo-title-edit-button">
         <img src={EditIcon} alt="edit" className="scale-125" />
       </div>
     </div>

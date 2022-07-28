@@ -34,11 +34,15 @@ const CardDetail: React.FC<IProps> = ({
             e.stopPropagation();
             onEditingItem(todo);
           }}
+          data-cy="todo-item-edit-button"
         >
           <img src={EditIcon} alt="edit" />
         </div>
       </div>
-      <DeleteButton onRemove={() => onDeleteItem(todo.id)} />
+      <DeleteButton
+        data-cy="todo-item-delete-button"
+        onRemove={() => onDeleteItem(todo.id)}
+      />
     </div>
   );
 };
