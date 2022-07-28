@@ -5,6 +5,7 @@ import EmptyIcon from "../../assets/svg/emptyIcon.svg";
 import useHomeViewModel from "./Home.viewModel";
 import Card from "../../components/molecules/Card/Card.molecule";
 import { ModalDelete } from "../../components/molecules";
+import ModalSuccess from "../../components/molecules/ModalSuccess/ModalSuccess.molecule";
 
 const HomeView = () => {
   const {
@@ -16,6 +17,8 @@ const HomeView = () => {
     isModalDelete,
     closeModal,
     openModal,
+    closeSuccessModal,
+    isSuccessModal,
   } = useHomeViewModel();
 
   return (
@@ -58,6 +61,7 @@ const HomeView = () => {
         item="Meeting dengan client"
         confirmDelete={onRemoveActivityHandler}
       />
+      <ModalSuccess isOpen={isSuccessModal} closeModal={closeSuccessModal} />
     </MainLayout>
   );
 };

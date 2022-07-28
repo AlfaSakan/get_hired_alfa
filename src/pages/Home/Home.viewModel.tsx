@@ -39,6 +39,20 @@ const useModalState = () => {
   };
 };
 
+const useSuccessModal = () => {
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
+
+  const openSuccessModal = () => setIsSuccessModal(true);
+
+  const closeSuccessModal = () => setIsSuccessModal(false);
+
+  return {
+    isSuccessModal,
+    openSuccessModal,
+    closeSuccessModal,
+  };
+};
+
 const useHomeViewModel = () => {
   const [activities, setActivities] = useState<ActivityModel[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +60,7 @@ const useHomeViewModel = () => {
   const navigate = useNavigate();
 
   const modalState = useModalState();
+  const successModalState = useSuccessModal();
 
   const onAddActivityHandler = async () => {
     try {
@@ -62,6 +77,7 @@ const useHomeViewModel = () => {
     try {
       setIsLoading(true);
       await deleteActivity(modalState.selectedActivity);
+      successModalState.openSuccessModal();
     } catch (error) {
       console.log("ERROR", error);
     } finally {
@@ -84,6 +100,7 @@ const useHomeViewModel = () => {
     isLoading,
     onNavigateDetail,
     ...modalState,
+    ...successModalState,
   };
 };
 

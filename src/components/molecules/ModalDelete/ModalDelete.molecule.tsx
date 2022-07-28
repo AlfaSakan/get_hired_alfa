@@ -3,6 +3,8 @@ import ReactModal from "react-modal";
 import WarningIcon from "../../../assets/svg/warningIcon.svg";
 import { Button } from "../../atoms";
 
+ReactModal.setAppElement("#root");
+
 interface IProps {
   isOpen: boolean;
   closeModal: () => void;
