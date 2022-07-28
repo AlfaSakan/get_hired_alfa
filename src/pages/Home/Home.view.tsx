@@ -4,6 +4,7 @@ import { Button } from "../../components/atoms";
 import EmptyIcon from "../../assets/svg/emptyIcon.svg";
 import useHomeViewModel from "./Home.viewModel";
 import Card from "../../components/molecules/Card/Card.molecule";
+import { ModalDelete } from "../../components/molecules";
 
 const HomeView = () => {
   const {
@@ -12,6 +13,9 @@ const HomeView = () => {
     isLoading,
     onRemoveActivityHandler,
     onNavigateDetail,
+    isModalDelete,
+    closeModal,
+    openModal,
   } = useHomeViewModel();
 
   return (
@@ -39,14 +43,21 @@ const HomeView = () => {
         <div className="mt-[59px] grid-cols-4 grid gap-[26px]">
           {activities.map((activity, index) => (
             <Card
+              key={`card activity ${index}`}
               activity={activity}
               index={index}
-              onRemove={onRemoveActivityHandler(activity.id)}
+              onRemove={openModal(activity.id)}
               onNavigateDetail={onNavigateDetail(activity.id)}
             />
           ))}
         </div>
       )}
+      <ModalDelete
+        isOpen={isModalDelete}
+        closeModal={closeModal}
+        item="Meeting dengan client"
+        confirmDelete={onRemoveActivityHandler}
+      />
     </MainLayout>
   );
 };

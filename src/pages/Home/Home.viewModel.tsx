@@ -20,11 +20,32 @@ const getDataActivity = async (
   }
 };
 
+const useModalState = () => {
+  const [isModalDelete, setIsModalDelete] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState(-1);
+
+  const closeModal = () => setIsModalDelete(false);
+
+  const openModal = (id: number) => () => {
+    setSelectedActivity(id);
+    setIsModalDelete(true);
+  };
+
+  return {
+    isModalDelete,
+    closeModal,
+    openModal,
+    selectedActivity,
+  };
+};
+
 const useHomeViewModel = () => {
   const [activities, setActivities] = useState<ActivityModel[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const modalState = useModalState();
 
   const onAddActivityHandler = async () => {
     try {
@@ -37,10 +58,10 @@ const useHomeViewModel = () => {
     }
   };
 
-  const onRemoveActivityHandler = (id: number) => async () => {
+  const onRemoveActivityHandler = async () => {
     try {
       setIsLoading(true);
-      await deleteActivity(id);
+      await deleteActivity(modalState.selectedActivity);
     } catch (error) {
       console.log("ERROR", error);
     } finally {
@@ -62,6 +83,7 @@ const useHomeViewModel = () => {
     onRemoveActivityHandler,
     isLoading,
     onNavigateDetail,
+    ...modalState,
   };
 };
 

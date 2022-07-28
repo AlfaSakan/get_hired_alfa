@@ -2,10 +2,14 @@ import React from "react";
 import AddRoundedIcon from "@material-ui/icons/AddRounded";
 
 interface IButton {
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  // onClick?: React.DOMAttributes<HTMLButtonElement>.onClick;
   text: string;
   type?: "button" | "submit" | "reset";
   isLoading?: boolean;
+  isPrefix?: boolean;
+  color?: string;
+  isBgColorDark?: boolean;
 }
 
 const Button: React.FC<IButton> = ({
@@ -13,6 +17,9 @@ const Button: React.FC<IButton> = ({
   text,
   type,
   isLoading = false,
+  isPrefix = true,
+  color = "bg-lightBlue",
+  isBgColorDark = true,
 }) => {
   if (isLoading) {
     return (
@@ -26,11 +33,21 @@ const Button: React.FC<IButton> = ({
   return (
     <button
       onClick={onClick}
-      className="bg-lightBlue flex items-center rounded-full py-[13.5px] px-7"
+      className={`flex items-center justify-center rounded-full py-[13.5px] px-7 ${color}`}
       type={type}
     >
-      <AddRoundedIcon style={{ fill: "white" }} />
-      <p className="ml-3 text-lg font-semibold text-white">{text}</p>
+      {isPrefix && (
+        <div className="mr-3">
+          <AddRoundedIcon style={{ fill: "white" }} />
+        </div>
+      )}
+      <p
+        className={`text-lg font-semibold ${
+          isBgColorDark ? "text-white" : "text-dark"
+        }`}
+      >
+        {text}
+      </p>
     </button>
   );
 };

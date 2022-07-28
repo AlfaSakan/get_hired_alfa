@@ -1,7 +1,7 @@
 import React from "react";
 import { ActivityModel } from "../../../models/Activity/Activity.model";
 import { formatDate } from "../../../utils/formatDate";
-import TrashIcon from "../../../assets/svg/trashIcon.svg";
+import { DeleteButton } from "../../atoms";
 
 interface IProps {
   activity: ActivityModel;
@@ -12,13 +12,12 @@ interface IProps {
 
 const Card: React.FC<IProps> = ({
   activity,
-  onRemove,
+  onRemove = () => {},
   index,
   onNavigateDetail,
 }) => {
   return (
     <div
-      key={`card activity ${index}`}
       className="w-[234px] h-[234px] bg-white shadow-lg rounded-xl pl-[27px] pr-[26px] pt-[22px] pb-[25px] cursor-pointer"
       data-cy={`activity-item-${index}`}
       onClick={onNavigateDetail}
@@ -34,13 +33,12 @@ const Card: React.FC<IProps> = ({
           >
             {formatDate(new Date(activity.created_at))}
           </p>
-          <div onClick={onRemove}>
-            <img
-              src={TrashIcon}
-              alt="trash icon"
-              data-cy="activity-item-delete"
-            />
-          </div>
+          <DeleteButton
+            onRemove={(e) => {
+              e.stopPropagation();
+              onRemove();
+            }}
+          />
         </div>
       </div>
     </div>
