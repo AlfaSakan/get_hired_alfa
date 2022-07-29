@@ -63,7 +63,7 @@ const HomeView = () => {
         confirmDelete={onRemoveActivityHandler}
         dataCyDelete="activity-item-delete-button"
         dataCyModal="modal-delete"
-        dataCyCancel="activity-item-cancel-button"
+        dataCyCancel="modal-delete-cancel-button"
       />
       <ModalSuccess isOpen={isSuccessModal} closeModal={closeSuccessModal} />
     </MainLayout>
