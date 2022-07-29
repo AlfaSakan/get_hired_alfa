@@ -3,7 +3,7 @@ import { PageRoute } from "../../constants/types.constants";
 import HomeView from "./Home.view";
 
 const HomeRoute: PageRoute = {
-  path: "/",
+  path: "/get_hired_alfa",
   element: <HomeView />,
 };
 

@@ -2,7 +2,7 @@ import { PageRoute } from "../../constants/types.constants";
 import DetailView from "./Detail.view";
 
 const DetailRoute: PageRoute = {
-  path: "/detail/:idActivity",
+  path: "/get_hired_alfa/detail/:idActivity",
   element: <DetailView />,
 };
 
