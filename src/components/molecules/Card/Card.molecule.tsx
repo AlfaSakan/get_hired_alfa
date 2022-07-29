@@ -18,7 +18,7 @@ const Card: React.FC<IProps> = ({
 }) => {
   return (
     <div
-      className="w-[234px] h-[234px] bg-white shadow-lg rounded-xl pl-[27px] pr-[26px] pt-[22px] pb-[25px] cursor-pointer"
+      className="w-[234px] h-[234px] bg-white shadow-lg rounded-xl pl-[27px] pr-[26px] pt-[22px] pb-[25px] cursor-pointer mr-4 mb-4"
       // data-cy={`activity-item-${index}`}
       data-cy="activity-item"
       onClick={onNavigateDetail}

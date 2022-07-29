@@ -43,7 +43,8 @@ const HomeView = () => {
           />
         </div>
       ) : (
-        <div className="mt-[59px] grid-cols-4 grid gap-[26px]">
+        // <div className="mt-[59px] lg:grid-cols-4 grid gap-[26px] md:grid-cols-2 sm:grid-cols-1">
+        <div className="mt-[59px] flex flex-wrap">
           {activities.map((activity, index) => (
             <Card
               key={`card activity ${index}`}
