@@ -61,7 +61,7 @@ const HomeView = () => {
         closeModal={closeModal}
         item="Meeting dengan client"
         confirmDelete={onRemoveActivityHandler}
-        dataCyDelete="activity-item-delete-button"
+        dataCyDelete="modal-delete-confirm-button"
         dataCyModal="modal-delete"
         dataCyCancel="modal-delete-cancel-button"
       />
