@@ -17,7 +17,10 @@ const CardDetail: React.FC<IProps> = ({
   onEditingItem = () => {},
 }) => {
   return (
-    <div className="flex bg-white rounded-xl px-7 py-[26px] items-center justify-between">
+    <div
+      className="flex bg-white rounded-xl px-7 py-[26px] items-center justify-between"
+      data-cy="todo-item"
+    >
       <div className="flex items-center">
         <CheckBox value={todo.is_active === 0} onChange={isActivityHandler} />
         <StatusDetail priority={todo.priority} />
@@ -25,6 +28,7 @@ const CardDetail: React.FC<IProps> = ({
           className={`mr-4 ${
             todo.is_active === 0 ? "line-through text-lightGray" : "text-dark"
           }`}
+          data-cy="todo-item-title"
         >
           {todo.title}
         </p>
@@ -40,7 +44,7 @@ const CardDetail: React.FC<IProps> = ({
         </div>
       </div>
       <DeleteButton
-        data-cy="todo-item-delete-button"
+        dataCy="todo-item-delete-button"
         onRemove={() => onDeleteItem(todo.id)}
       />
     </div>
