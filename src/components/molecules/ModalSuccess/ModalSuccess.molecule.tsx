@@ -28,7 +28,7 @@ const ModalSuccess: React.FC<IProps> = ({ isOpen, closeModal = () => {} }) => {
       style={customStyles}
       contentLabel="Modal Success"
     >
-      <div>
+      <div data-cy="modal-information">
         <div className="flex items-center">
           <img src={SuccessIcon} alt="success icon" className="mr-3" />
           <p className="text-sm font-medium">Activity berhasil dihapus</p>

@@ -18,7 +18,11 @@ const EditText: React.FC<IProps> = ({ onChange, value, onEdited }) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div
+      className="flex items-center"
+      onClick={onIsEditModeHandler}
+      data-cy="todo-title"
+    >
       {isEditMode ? (
         <input
           type="text"
@@ -29,12 +33,13 @@ const EditText: React.FC<IProps> = ({ onChange, value, onEdited }) => {
       ) : (
         <h1
           className="text-4xl font-bold text-dark mr-6"
-          data-cy="activity-title"
+          // data-cy="activity-title"
+          // data-cy="todo-title"
         >
           {value}
         </h1>
       )}
-      <div onClick={onIsEditModeHandler} data-cy="todo-title-edit-button">
+      <div>
         <img src={EditIcon} alt="edit" className="scale-125" />
       </div>
     </div>

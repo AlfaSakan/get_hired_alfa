@@ -61,7 +61,7 @@ const DetailView = () => {
             </div>
             <Button
               text="Tambah"
-              data-cy="activity-add-button"
+              dataCy="todo-add-button"
               onClick={() => openModal()}
               isLoading={isLoading}
             />

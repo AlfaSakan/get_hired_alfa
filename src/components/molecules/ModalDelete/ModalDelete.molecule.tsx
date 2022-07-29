@@ -10,6 +10,9 @@ interface IProps {
   closeModal: () => void;
   item: string;
   confirmDelete: () => void;
+  dataCyDelete?: string;
+  dataCyCancel?: string;
+  dataCyModal?: string;
 }
 
 const customStyles = {
@@ -28,6 +31,9 @@ const ModalDelete: React.FC<IProps> = ({
   isOpen,
   item,
   confirmDelete,
+  dataCyCancel,
+  dataCyDelete,
+  dataCyModal,
 }) => {
   return (
     <ReactModal
@@ -36,7 +42,7 @@ const ModalDelete: React.FC<IProps> = ({
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <div>
+      <div data-cy={dataCyModal}>
         <div className="flex justify-center mb-8 mt-10">
           <img src={WarningIcon} alt="warning icon" />
         </div>
@@ -52,6 +58,7 @@ const ModalDelete: React.FC<IProps> = ({
               color="bg-backgroundColor"
               isBgColorDark={false}
               onClick={closeModal}
+              dataCy={dataCyCancel}
             />
             <Button
               text="Hapus"
@@ -61,6 +68,7 @@ const ModalDelete: React.FC<IProps> = ({
                 closeModal();
                 confirmDelete();
               }}
+              dataCy={dataCyDelete}
             />
           </div>
         </div>

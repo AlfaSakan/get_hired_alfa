@@ -16,7 +16,10 @@ const Dropdown: React.FC<IProps> = ({
   selectedItem,
 }) => {
   return (
-    <div className="absolute bg-white rounded-md shadow-sm border w-52 top-[3.75rem] z-50">
+    <div
+      className="absolute bg-white rounded-md shadow-sm border w-52 top-[3.75rem] z-50"
+      data-cy="modal-add-priority-dropdown"
+    >
       {items.map((priority, index) => (
         <div
           key={`priority ${index}`}

@@ -105,6 +105,7 @@ const ModalAddItem: React.FC<IProps> = ({
               placeholder="Tambahkan nama list item"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              daya-cy="modal-add-name-input"
             />
           </div>
           <div className="flex flex-col">
@@ -138,6 +139,7 @@ const ModalAddItem: React.FC<IProps> = ({
               closeModal();
               resetState();
             }}
+            dataCy="modal-add-save-button"
           />
         </div>
       </div>
