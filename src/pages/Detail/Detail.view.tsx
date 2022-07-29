@@ -7,6 +7,7 @@ import useDetailViewModel from "./Detail.viewModel";
 import { DropdownSort, ModalAddItem } from "../../components/organisms";
 import SortIcon from "../../assets/svg/sortIcon.svg";
 import { SORT_TYPE } from "../../constants/sort.constant";
+import ModalSuccess from "../../components/molecules/ModalSuccess/ModalSuccess.molecule";
 
 const DetailView = () => {
   const {
@@ -32,6 +33,8 @@ const DetailView = () => {
     isOpenDropdown,
     sortValue,
     todoList,
+    isSuccessModal,
+    closeSuccessModal,
   } = useDetailViewModel();
 
   return (
@@ -122,7 +125,11 @@ const DetailView = () => {
         isOpen={isModalDelete}
         confirmDelete={deleteTodoItemApi}
         item={selectedItem?.title || ""}
+        dataCyModal="modal-delete"
+        dataCyDelete="modal-delete-confirm-button"
+        dataCyCancel=""
       />
+      <ModalSuccess isOpen={isSuccessModal} closeModal={closeSuccessModal} />
     </MainLayout>
   );
 };

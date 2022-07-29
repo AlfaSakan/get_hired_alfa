@@ -56,6 +56,20 @@ const useModalDeleteState = () => {
   };
 };
 
+const useSuccessModal = () => {
+  const [isSuccessModal, setIsSuccessModal] = useState(false);
+
+  const openSuccessModal = () => setIsSuccessModal(true);
+
+  const closeSuccessModal = () => setIsSuccessModal(false);
+
+  return {
+    isSuccessModal,
+    openSuccessModal,
+    closeSuccessModal,
+  };
+};
+
 const useDetailViewModel = () => {
   const [activityTitle, setActivityTitle] = useState("");
   const [todoList, setTodoList] = useState<TodoModel[]>([]);
@@ -65,6 +79,7 @@ const useDetailViewModel = () => {
 
   const modalState = useModalState();
   const modalDeleteState = useModalDeleteState();
+  const modalSuccessState = useSuccessModal();
 
   const navigate = useNavigate();
 
@@ -113,6 +128,8 @@ const useDetailViewModel = () => {
 
           return filtered;
         });
+
+        modalSuccessState.openSuccessModal();
       }
     } catch (error) {
       console.log("ERROR deleteTodoItemApi", error);
@@ -242,6 +259,7 @@ const useDetailViewModel = () => {
     sortValue,
     ...modalState,
     ...modalDeleteState,
+    ...modalSuccessState,
   };
 };
 

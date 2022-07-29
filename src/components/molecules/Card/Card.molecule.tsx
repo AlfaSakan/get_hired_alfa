@@ -39,6 +39,7 @@ const Card: React.FC<IProps> = ({
               e.stopPropagation();
               onRemove();
             }}
+            dataCy="activity-item-delete-button"
           />
         </div>
       </div>
