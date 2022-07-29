@@ -22,7 +22,7 @@ const Button: React.FC<IButton> = ({
   color = "bg-lightBlue",
   isBgColorDark = true,
   dataCy,
-  disabled,
+  disabled = false,
 }) => {
   if (isLoading) {
     return (
