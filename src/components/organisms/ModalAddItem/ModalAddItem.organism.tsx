@@ -95,11 +95,11 @@ const ModalAddItem: React.FC<IProps> = ({
             <label
               htmlFor="item"
               className="font-semibold text-xs mb-2 font-poppins"
-              daya-cy="modal-add-name-title"
+              data-cy="modal-add-name-title"
             >
               Nama List Item
             </label>
-            <div daya-cy="modal-add-name-input">
+            <div data-cy="modal-add-name-input">
               <input
                 type="text"
                 id="item"
@@ -113,7 +113,7 @@ const ModalAddItem: React.FC<IProps> = ({
           <div className="flex flex-col">
             <p
               className="font-semibold text-xs mb-2"
-              daya-cy="modal-add-priority-title"
+              data-cy="modal-add-priority-title"
             >
               Priority
             </p>
