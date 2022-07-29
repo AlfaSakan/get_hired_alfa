@@ -10,6 +10,7 @@ interface IButton {
   isPrefix?: boolean;
   color?: string;
   isBgColorDark?: boolean;
+  dataCy?: string;
 }
 
 const Button: React.FC<IButton> = ({
@@ -20,10 +21,14 @@ const Button: React.FC<IButton> = ({
   isPrefix = true,
   color = "bg-lightBlue",
   isBgColorDark = true,
+  dataCy,
 }) => {
   if (isLoading) {
     return (
-      <button className="bg-backgroundColor flex items-center rounded-full py-[13.5px] px-7">
+      <button
+        data-cy={dataCy}
+        className="bg-backgroundColor flex items-center rounded-full py-[13.5px] px-7"
+      >
         <AddRoundedIcon style={{ fill: "white" }} />
         <p className="ml-3 text-lg font-semibold text-white">Loading...</p>
       </button>
@@ -35,6 +40,7 @@ const Button: React.FC<IButton> = ({
       onClick={onClick}
       className={`flex items-center justify-center rounded-full py-[13.5px] px-7 ${color}`}
       type={type}
+      data-cy={dataCy}
     >
       {isPrefix && (
         <div className="mr-3">

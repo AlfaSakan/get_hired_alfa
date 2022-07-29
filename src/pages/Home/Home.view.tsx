@@ -29,7 +29,7 @@ const HomeView = () => {
         </h1>
         <Button
           text="Tambah"
-          data-cy="activity-add-button"
+          dataCy="activity-add-button"
           onClick={onAddActivityHandler}
           isLoading={isLoading}
         />
