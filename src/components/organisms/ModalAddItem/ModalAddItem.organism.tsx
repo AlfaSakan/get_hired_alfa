@@ -83,7 +83,7 @@ const ModalAddItem: React.FC<IProps> = ({
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <div>
+      <div data-cy="modal-add">
         <div className="flex items-center justify-between pl-8 pr-10 pt-6 pb-5">
           <p className="font-semibold text-lg">Tambah List Item</p>
           <div className="cursor-pointer" onClick={closeModal}>

@@ -27,6 +27,7 @@ const DropdownSort: React.FC<IProps> = ({
           onClick={(e) => {
             onClick(item);
           }}
+          data-cy="sort-selection"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center">

@@ -47,7 +47,11 @@ const DetailView = () => {
             />
           </div>
           <div className="flex items-center">
-            <div className="relative" onClick={dropdownToggle}>
+            <div
+              className="relative"
+              onClick={dropdownToggle}
+              data-cy="todo-sort-button"
+            >
               <div className="border rounded-full p-3 mr-[18px] cursor-pointer">
                 <img src={SortIcon} alt="sorting list" />
               </div>
