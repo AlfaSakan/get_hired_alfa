@@ -29,6 +29,7 @@ const Dropdown: React.FC<IProps> = ({
             e.stopPropagation();
             onClick(priority);
           }}
+          data-cy="modal-add-priority-item"
         >
           <PriorityStatus label={priority.label} priority={priority.value} />
         </div>

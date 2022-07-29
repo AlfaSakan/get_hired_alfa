@@ -3,7 +3,6 @@ import AddRoundedIcon from "@material-ui/icons/AddRounded";
 
 interface IButton {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  // onClick?: React.DOMAttributes<HTMLButtonElement>.onClick;
   text: string;
   type?: "button" | "submit" | "reset";
   isLoading?: boolean;
