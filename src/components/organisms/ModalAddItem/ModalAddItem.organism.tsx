@@ -148,7 +148,7 @@ const ModalAddItem: React.FC<IProps> = ({
               resetState();
             }}
             dataCy="modal-add-save-button"
-            isLoading={title === ""}
+            disabled={title === ""}
           />
         </div>
       </div>

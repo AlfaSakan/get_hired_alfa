@@ -10,6 +10,7 @@ interface IButton {
   color?: string;
   isBgColorDark?: boolean;
   dataCy?: string;
+  disabled?: boolean;
 }
 
 const Button: React.FC<IButton> = ({
@@ -21,6 +22,7 @@ const Button: React.FC<IButton> = ({
   color = "bg-lightBlue",
   isBgColorDark = true,
   dataCy,
+  disabled,
 }) => {
   if (isLoading) {
     return (
@@ -40,6 +42,7 @@ const Button: React.FC<IButton> = ({
       className={`flex items-center justify-center rounded-full py-[13.5px] px-7 ${color}`}
       type={type}
       data-cy={dataCy}
+      disabled={disabled}
     >
       {isPrefix && (
         <div className="mr-3">
