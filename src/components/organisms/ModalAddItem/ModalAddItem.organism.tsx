@@ -98,15 +98,16 @@ const ModalAddItem: React.FC<IProps> = ({
             >
               Nama List Item
             </label>
-            <input
-              type="text"
-              id="item"
-              className="border h-[3.25rem] pl-[18px] rounded-md"
-              placeholder="Tambahkan nama list item"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              daya-cy="modal-add-name-input"
-            />
+            <div daya-cy="modal-add-name-input">
+              <input
+                type="text"
+                id="item"
+                className="border h-[3.25rem] pl-[18px] rounded-md"
+                placeholder="Tambahkan nama list item"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
           </div>
           <div className="flex flex-col">
             <p className="font-semibold text-xs mb-2">Priority</p>
@@ -114,6 +115,7 @@ const ModalAddItem: React.FC<IProps> = ({
               <div
                 className="border rounded-md h-[3.25rem] px-[18px] flex items-center justify-between w-52 cursor-pointer"
                 onClick={dropdownToggle}
+                data-cy="modal-add-priority-dropdown"
               >
                 <PriorityStatus
                   label={defaultPriority.label}
