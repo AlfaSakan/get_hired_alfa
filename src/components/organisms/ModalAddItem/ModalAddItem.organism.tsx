@@ -103,7 +103,7 @@ const ModalAddItem: React.FC<IProps> = ({
               <input
                 type="text"
                 id="item"
-                className="border h-[3.25rem] pl-[18px] rounded-md"
+                className="border h-[3.25rem] pl-[18px] rounded-md w-full"
                 placeholder="Tambahkan nama list item"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
