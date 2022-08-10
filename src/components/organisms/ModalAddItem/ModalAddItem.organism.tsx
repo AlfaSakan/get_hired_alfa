@@ -14,10 +14,10 @@ ReactModal.setAppElement("#root");
 const customStyles = {
   content: {
     backgroundColor: "white",
-    height: "72%",
-    width: "65%",
+    height: "65%",
+    width: "60%",
     borderRadius: "12px",
-    transform: "translate(20%, 10%)",
+    transform: "translate(25%, 33%)",
     padding: 0,
     overflow: "visible",
   },
@@ -83,7 +83,7 @@ const ModalAddItem: React.FC<IProps> = ({
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <div data-cy="modal-add">
+      <div data-cy="modal-add" className="h-full">
         <div className="flex items-center justify-between pl-8 pr-10 pt-6 pb-5">
           <p className="font-semibold text-lg" data-cy="modal-add-title">
             Tambah List Item

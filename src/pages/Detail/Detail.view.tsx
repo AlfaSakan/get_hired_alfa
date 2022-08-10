@@ -55,7 +55,7 @@ const DetailView = () => {
               onClick={dropdownToggle}
               data-cy="todo-sort-button"
             >
-              <div className="border rounded-full p-3 mr-[18px] cursor-pointer">
+              <div className="border rounded-full flex items-center justify-center mr-[18px] cursor-pointer w-[54px] h-[54px]">
                 <img src={SortIcon} alt="sorting list" />
               </div>
               {isOpenDropdown && (
