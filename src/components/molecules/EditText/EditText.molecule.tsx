@@ -26,6 +26,7 @@ const EditText: React.FC<IProps> = ({ onChange, value, onEdited }) => {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           className="mr-6 bg-inherit focus:outline-none border-b border-black text-4xl font-bold text-dark pb-2"
+          onBlur={onIsEditModeHandler}
         />
         <div onClick={onIsEditModeHandler} data-cy="todo-title-edit-button">
           <img src={EditIcon} alt="edit" className="scale-125" />

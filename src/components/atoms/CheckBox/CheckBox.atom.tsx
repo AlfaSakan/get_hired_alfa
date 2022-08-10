@@ -7,12 +7,13 @@ interface IProps {
 
 const CheckBox: React.FC<IProps> = ({ onChange, value }) => {
   return (
-    <div data-cy="todo-item-checkbox">
+    <div>
       <input
         checked={value}
         type="checkbox"
         className="mr-[22px] rounded-none cursor-pointer"
         onChange={(e) => onChange(e.target.checked)}
+        data-cy="todo-item-checkbox"
       />
     </div>
   );

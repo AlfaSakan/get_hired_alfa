@@ -139,14 +139,18 @@ const ModalAddItem: React.FC<IProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-end pt-4 pr-10">
+        <div
+          className="flex items-center justify-end pt-4 pr-10"
+          onClick={() => {
+            if (title !== "") {
+              onSubmit(title, defaultPriority.value);
+            }
+            closeModal();
+            resetState();
+          }}
+        >
           <Button
             text="Simpan"
-            onClick={() => {
-              onSubmit(title, defaultPriority.value);
-              closeModal();
-              resetState();
-            }}
             dataCy="modal-add-save-button"
             disabled={title === ""}
           />
