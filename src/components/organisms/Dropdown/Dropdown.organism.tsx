@@ -25,8 +25,7 @@ const Dropdown: React.FC<IProps> = ({
           } px-[18px] py-2 cursor-pointer ${
             priority.value === selectedItem ? "bg-lightBlue" : "bg-white"
           }`}
-          onClick={(e) => {
-            e.stopPropagation();
+          onClick={() => {
             onClick(priority);
           }}
           data-cy="modal-add-priority-item"

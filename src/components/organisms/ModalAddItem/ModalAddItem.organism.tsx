@@ -17,7 +17,7 @@ const customStyles = {
     height: "65%",
     width: "60%",
     borderRadius: "12px",
-    transform: "translate(25%, 33%)",
+    transform: "translate(25%, 25%)",
     padding: 0,
     overflow: "visible",
   },

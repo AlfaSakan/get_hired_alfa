@@ -26,6 +26,8 @@ describe("example to-do app", () => {
     // which are the two default items.
     cy.get("[data-cy=activity-item]").first().click();
     cy.get("[data-cy=todo-add-button]").click();
+    cy.get("[data-cy=modal-add-priority-dropdown]").click();
+    cy.get("[data-cy=modal-add-priority-item]").last().click();
     cy.get("body").click(0,0);
     cy.get("[data-cy=todo-sort-button]").click();
   });
