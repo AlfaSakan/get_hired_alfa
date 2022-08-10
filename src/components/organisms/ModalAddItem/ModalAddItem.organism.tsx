@@ -14,10 +14,10 @@ ReactModal.setAppElement("#root");
 const customStyles = {
   content: {
     backgroundColor: "white",
-    top: "40%",
-    left: "40%",
+    height: "72%",
+    width: "65%",
     borderRadius: "12px",
-    transform: "translate(-33%, -30%)",
+    transform: "translate(20%, 10%)",
     padding: 0,
     overflow: "visible",
   },
@@ -85,8 +85,14 @@ const ModalAddItem: React.FC<IProps> = ({
     >
       <div data-cy="modal-add">
         <div className="flex items-center justify-between pl-8 pr-10 pt-6 pb-5">
-          <p className="font-semibold text-lg">Tambah List Item</p>
-          <div className="cursor-pointer" onClick={closeModal}>
+          <p className="font-semibold text-lg" data-cy="modal-add-title">
+            Tambah List Item
+          </p>
+          <div
+            className="cursor-pointer"
+            data-cy="modal-add-close-button"
+            onClick={closeModal}
+          >
             <CloseIcon />
           </div>
         </div>
@@ -139,17 +145,17 @@ const ModalAddItem: React.FC<IProps> = ({
             </div>
           </div>
         </div>
-        <div
-          className="flex items-center justify-end pt-4 pr-10"
-          onClick={() => {
-            if (title !== "") {
-              onSubmit(title, defaultPriority.value);
-            }
-            closeModal();
-            resetState();
-          }}
-        >
+        <div className="flex items-center justify-end pt-4 pr-10">
           <Button
+            onClick={() => {
+              if (title !== "") {
+                onSubmit(title, defaultPriority.value);
+              }
+            }}
+            onFocus={() => {
+              closeModal();
+              resetState();
+            }}
             text="Simpan"
             dataCy="modal-add-save-button"
             disabled={title === ""}

@@ -11,6 +11,7 @@ interface IButton {
   isBgColorDark?: boolean;
   dataCy?: string;
   disabled?: boolean;
+  onFocus?: () => void;
 }
 
 const Button: React.FC<IButton> = ({
@@ -23,6 +24,7 @@ const Button: React.FC<IButton> = ({
   isBgColorDark = true,
   dataCy,
   disabled = false,
+  onFocus = () => {},
 }) => {
   if (isLoading) {
     return (
@@ -43,6 +45,7 @@ const Button: React.FC<IButton> = ({
       type={type}
       data-cy={dataCy}
       disabled={disabled}
+      onFocus={onFocus}
     >
       {isPrefix && (
         <div className="mr-3">
